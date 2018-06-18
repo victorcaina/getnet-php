@@ -1,0 +1,20 @@
+{
+    "name": "getnet/getnet-php",
+    "description": "GetNet PHP Library",
+    "keywords": [
+    	"getnet",
+    	"Get Net",
+    	"GetNet",
+    	"api",
+    	"api getnet"
+	],
+    "require": {
+        "php": ">5.3",
+        "ext-mbstring":"*",
+        "ext-curl":"*",
+        "ext-json":"*"
+    },
+    "autoload": {
+    	"classmap":["lib/GetNet"]
+    }
+}
