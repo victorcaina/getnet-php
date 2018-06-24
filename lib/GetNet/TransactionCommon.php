@@ -9,8 +9,8 @@ class GetNet_TransactionCommon extends GetNet_CardHashCommon
 	{
 		parent::__construct($response);
 
-		if(!isset($this->payment_method)) {
-			$this->payment_method = 'credit_card';
-		}
+		// if(!isset($this->payment_method)) {
+		// 	$this->payment_method = 'credit_card';
+		// }
 	}
 }
