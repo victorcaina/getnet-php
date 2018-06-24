@@ -28,10 +28,7 @@ class GetNet_Exception extends Exception
 
 
 	public static function buildWithFullMessage($response_error) {
-		$joined_messages = '';
-		foreach($response_error['errors'] as $error) {
-			$joined_messages .= $error['message'] . "\n";
-		}
+		$joined_messages = $response_error['error_description'];
 
 		$instance =  new self($joined_messages, $response_error);
 		

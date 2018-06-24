@@ -3,7 +3,7 @@
 /**
  * 
  */
-class GetNet__Transaction extends GetNet_TransactionCommon
+class GetNet_Transaction extends GetNet_TransactionCommon
 {
 
 	public function charge() 
