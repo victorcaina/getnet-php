@@ -73,7 +73,7 @@
 
 	$authenticate = [
 		'client_id' 	=> 'eb153ef1-4e41-4898-92d4-ee407e47b199',
-		'client_secret' => 'cf1e007-5cf9-4fda-830d-e51f9de0b9e6'
+		'client_secret' => 'fcf1e007-5cf9-4fda-830d-e51f9de0b9e6'
 	];
 
 	$authorization = new GetNet_Token($authenticate);
@@ -93,7 +93,7 @@
 
 	// Ideia
 
-
+	//Sellet id: 61040993-1bd9-4958-9a69-4a8dcf5b890c
 	// GetNet::setClientId('eb153ef1-4e41-4898-92d4-ee407e47b199');
 	// GetNet::setClientSecret('cf1e007-5cf9-4fda-830d-e51f9de0b9e6');
 
