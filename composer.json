@@ -15,6 +15,13 @@
         "ext-json":"*"
     },
     "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "contributors",
+            "homepage": "https://github.com/victorcaina/getnet-php/graphs/contributors"
+        }
+    ],
     "autoload": {
     	"classmap":["lib/GetNet"]
     }
