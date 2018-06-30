@@ -8,7 +8,7 @@ class GetNet_Request extends GetNet
 	private $headers;
 	private $live;
 
-	public function __construct($path, $method, $live = GetNet::live)
+	public function __construct($path, $method, $live = GetNet::LIVE)
 	{
 		$this->method 	= $method;
 		$this->path 	= $path;
