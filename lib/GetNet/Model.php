@@ -30,8 +30,41 @@ class GetNet_Model extends GetNet_Object
 		$request->setParameters($parameters);
 		$response = $request->runauth();
 
-		return $this->refresh($response);		
-		var_dump(self::getUrl());exit();
+		return $this->set_session($response);
 	}
 
+	public function create($path)
+	{
+		$request = new GetNet_Request(self::getUrl() . $path, 'POST');
+		$request->setAuthorization($this->get_session('token_type') . ' ' . $this->get_session('access_token'));
+		$parameters = $this->__toArray(true);
+		$request->setParameters($parameters);
+		$response = $request->run();
+
+		return $this->refresh($response);
+	}
+
+	public static function findById($id)
+	{
+		$request = new GetNet_Request(self::getUrl() . '/' . $id, 'GET');
+		$response = $request->run();
+		$class = get_called_class();
+
+		return new $class($response);
+	}
+
+	public static function all($page = 1, $count = 10)
+	{
+		$request = new GetNet_Request(self::getUrl(), 'GET');
+		$request->setParameters(["page" => $page, "count" => $count]);
+		$response = $request->run();
+		$return_array = Array();
+		$class = get_called_class();
+
+		foreach($response as $r) {
+			$return_array[] = new $class($r);
+		}
+
+		return $return_array;
+	}
 }
