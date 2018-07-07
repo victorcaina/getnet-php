@@ -20,5 +20,7 @@ $authenticate = [
 ];
 
 $authorization = new GetNet_Token($authenticate);
-$authorization->authorize()
+$authorization->authorize();
 ```
+### Wiki
+Check the [wiki](https://github.com/victorcaina/getnet-php/wiki) for detailed documentation.
