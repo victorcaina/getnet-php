@@ -1,12 +1,13 @@
 <?php
 
-class GetNet_Request extends GetNet 
+class GetNet_Request extends GetNet
 {
 	private $path;
 	private $method;
 	private $parameters = Array();
 	private $headers;
 	private $live;
+	private $authorization;
 
 	public function __construct($path, $method, $live = GetNet::LIVE)
 	{
@@ -27,7 +28,6 @@ class GetNet_Request extends GetNet
 				"url" 			=> $this->api_url_authenticate($this->path),
 				"headers" 		=> $this->headers,
 				"parameters" 	=> 'scope=oob&grant_type=client_credentials',
-				// "authorization"	=> base64_encode($this->parameters['client_id'] . ':' . $this->parameters['client_secret'])
 				"client_id"		=> $this->parameters['client_id'],
 				"client_secret" => $this->parameters['client_secret']
 			]
@@ -48,18 +48,17 @@ class GetNet_Request extends GetNet
 
 	public function run()
 	{
-		// if(!parent::getSellerId()) {
-		// 	throw new GetNet_Exception("You need to configure Seller Id before performing requests.");
-		// }
+		if(!parent::getSellerId()) {
+			throw new GetNet_Exception("You need to configure Seller Id before performing requests.");
+		}
 
-		$this->sellerId = parent::getSellerId();
 		$client = new RestClient(
 			[
 				"method" 		=> $this->method,
 				"url" 			=> $this->full_api_url($this->path),
 				"headers" 		=> $this->headers,
 				"parameters" 	=> $this->parameters,
-				"seller_id" 	=> $this->sellerId
+				"authorization" => $this->authorization
 			]
 		);
 		$response = $client->run();
@@ -87,5 +86,15 @@ class GetNet_Request extends GetNet
 	public function getParameters()
 	{
 		return $this->parameters;
+	}
+
+	public function setAuthorization($authorization)
+	{
+		$this->authorization = $authorization;
+	}
+
+	public function getAuthorization()
+	{
+		return $this->authorization;
 	}
 }

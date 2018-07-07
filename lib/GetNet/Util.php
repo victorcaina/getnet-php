@@ -58,6 +58,7 @@ class GetNet_Util
 			'address' 		=> "GetNet_Address",
 			'phone' 		=> "GetNet_Phone",
 			// 'subscription' 	=> 'GetNet_Subscription'
+			// 'access_token'  => "GetNet_Token"
 		];
 
 		if(self::isList($response)) {

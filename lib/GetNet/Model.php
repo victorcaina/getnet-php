@@ -30,8 +30,18 @@ class GetNet_Model extends GetNet_Object
 		$request->setParameters($parameters);
 		$response = $request->runauth();
 
-		return $this->refresh($response);		
-		var_dump(self::getUrl());exit();
+		return $this->set_session($response);
+	}
+
+	public function create($path)
+	{
+		$request = new GetNet_Request(self::getUrl() . $path, 'POST');
+		$request->setAuthorization($this->get_session('token_type') . ' ' . $this->get_session('access_token'));
+		$parameters = $this->__toArray(true);
+		$request->setParameters($parameters);
+		$response = $request->run();
+
+		return $this->refresh($response);
 	}
 
 }
