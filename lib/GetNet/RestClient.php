@@ -13,9 +13,10 @@ class RestClient {
 	{
 		$this->curl = curl_init();
 		$this->headers = [
-			'Accept: application/json',
+			'Authorization: '. $params["authorization"],
+			'cache-control: no-cache',
 			'Content-Type: application/json',
-			// 'Authorization': $params['auth']
+			'Accept: application/json'
 		];
 
 		if(!$params["url"]) {
@@ -24,7 +25,6 @@ class RestClient {
 			$this->url = $params["url"];
 		}
 
-		curl_setopt($this->curl, CURLOPT_USERPWD, $params['seller_id'] . ":" . 'x');
 		curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($this->curl, CURLOPT_TIMEOUT, 60);
 		curl_setopt($this->curl, CURLOPT_SSLVERSION, 6);

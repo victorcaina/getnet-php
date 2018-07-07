@@ -2,8 +2,7 @@
 
 abstract class GetNet
 {
-	public static $client_id;
-	public static $client_secret;
+	public static $seller_id;
 	const LIVE = 1;
 	const END_POINT_HOMOLOGATION = "https://api-homologacao.getnet.com.br";
 	const END_POINT_PRODUCTION = " ";
@@ -20,23 +19,13 @@ abstract class GetNet
 		return self::END_POINT_HOMOLOGATION . '/' . self::AUTH . $path;
 	}
 
-	public static function setClientId($client_id)
+	public static function setSellerId($seller_id)
 	{
-		self::$client_id = $client_id;
+		self::$seller_id = $seller_id;
 	}
 
-	public static function setClientSecret($client_secret)
+	public static function getSellerId()
 	{
-		self::$client_secret = $client_secret;
-	}
-
-	public static function getClientId()
-	{
-		return self::$client_id;
-	}
-
-	public static function getClientSecret()
-	{
-		return self::$client_secret;
+		return self::$seller_id;
 	}
 }

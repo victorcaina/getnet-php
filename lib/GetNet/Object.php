@@ -202,4 +202,26 @@ class GetNet_Object implements ArrayAccess, Iterator
 			return $this->_attributes;
 		}
 	}
+
+	public function set_session($response)
+	{
+		if (is_array($response)) {
+			foreach ($response as $key => $value) {
+				$_SESSION[$key] = $value;
+			}
+		}
+	}
+
+	public function get_session($key, $unserialize = false)
+	{
+		if (!isset($_SESSION[$key])) {
+			return null;
+		}
+
+		if ($unserialize) {
+			return unserialize($_SESSION[$key]);
+		}
+
+		return $_SESSION[$key];
+	}
 }
