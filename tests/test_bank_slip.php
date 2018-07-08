@@ -49,21 +49,3 @@
 
 	$transacao = new GetNet_Payment($dados_transacao);
 	$transacao->charge('/boleto');
-
-
-	// var_dump($array);
-	// GetNet::setClientId();
-	// GetNet::setClientSecret();
-	// var_dump(GetNet::getSellerId());
-	// echo'<pre>';
-	// var_dump(new GetNet_Transaction($array));
-
-
-
-
-	// Ideia
-
-	//Sellet id: 61040993-1bd9-4958-9a69-4a8dcf5b890c
-	// GetNet::setClientId('eb153ef1-4e41-4898-92d4-ee407e47b199');
-	// GetNet::setClientSecret('cf1e007-5cf9-4fda-830d-e51f9de0b9e6');
-
