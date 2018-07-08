@@ -50,4 +50,5 @@ require(dirname(__FILE__) . '/lib/GetNet/PaymentCommon.php');
 require(dirname(__FILE__) . '/lib/GetNet/Payment.php');
 require(dirname(__FILE__) . '/lib/GetNet/TokenCommon.php');
 require(dirname(__FILE__) . '/lib/GetNet/Token.php');
+require(dirname(__FILE__) . '/lib/GetNet/Customer.php');
 require(dirname(__FILE__) . '/lib/GetNet/Util.php');
