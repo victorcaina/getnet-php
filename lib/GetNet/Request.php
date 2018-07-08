@@ -67,7 +67,6 @@ class GetNet_Request extends GetNet
 		if($decode === NULL) {
 			throw new Exception("Failed to decode json from response.\n\n Response: " . $response);
 		}else {
-			var_dump($decode);
 			if($response["code"] == 200) {
 				return $decode;
 			}else {

@@ -47,6 +47,7 @@ class GetNet_Model extends GetNet_Object
 	public static function findById($id)
 	{
 		$request = new GetNet_Request(self::getUrl() . '/' . $id, 'GET');
+		$request->setAuthorization(parent::get_session('token_type') . ' ' . parent::get_session('access_token'));
 		$response = $request->run();
 		$class = get_called_class();
 
@@ -56,7 +57,8 @@ class GetNet_Model extends GetNet_Object
 	public static function all($page = 1, $count = 10)
 	{
 		$request = new GetNet_Request(self::getUrl(), 'GET');
-		$request->setParameters(["page" => $page, "count" => $count]);
+		$request->setAuthorization(parent::get_session('token_type') . ' ' . parent::get_session('access_token'));
+		$request->setParameters(["page" => $page, "limit" => $count]);
 		$response = $request->run();
 		$return_array = Array();
 		$class = get_called_class();

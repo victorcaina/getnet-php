@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  */
 class GetNet_Exception extends Exception
 {
@@ -31,7 +31,7 @@ class GetNet_Exception extends Exception
 		$joined_messages = $response_error['error_description'];
 
 		$instance =  new self($joined_messages, $response_error);
-		
+
 		return $instance;
 	}
 
@@ -50,7 +50,7 @@ class GetNet_Exception extends Exception
 	{
 		return $this->method;
 	}
-	
+
 	public function getReturnCode()
 	{
 		return $this->return_code;

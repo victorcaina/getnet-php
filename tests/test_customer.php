@@ -39,9 +39,13 @@ $dados_clientes = [
 ];
 
 // Criar cliente
-// $client = new GetNet_Customer($dados_clientes);
-// $client->create();
+$client = new GetNet_Customer($dados_clientes);
+$client->create();
 
 // Buscar cliente
-$client = new GetNet_Customer();
-debug2($client->findById('customer_21081826'));
+// $client = new GetNet_Customer();
+// $client->findById('customer_21081826');
+
+// Buscar lista cliente
+// $client = new GetNet_Customer();
+// debug2($client->all());
