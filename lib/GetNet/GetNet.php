@@ -5,7 +5,8 @@ abstract class GetNet
 	public static $seller_id;
 	const LIVE = 1;
 	const END_POINT_HOMOLOGATION = "https://api-homologacao.getnet.com.br";
-	const END_POINT_PRODUCTION = " ";
+	const END_POINT_PRODUCTION = "";
+	const END_POINT_SANDBOX = "https://api-sandbox.getnet.com.br";
 	const API_VERSION = 'v1';
 	const AUTH = 'auth/oauth/v2';
 
